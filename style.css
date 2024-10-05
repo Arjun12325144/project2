@@ -1,0 +1,448 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+} 
+#main{ 
+    position: relative;
+    z-index: 10; 
+}
+#page1{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EEEAE1;
+    position: relative;
+    padding: 0 2vw;
+}
+nav{ 
+    padding: 2vw 0vw;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+#navpart2{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+#navpart2 h4{
+    border: 1px solid #57565694;
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: #111111ca;
+    font-weight: 500;
+    position: relative;
+    font-size: 18px;
+    /* button pa jo annimation ho ari ha use hidden sa bhi ha */
+    overflow: hidden;
+    transition: all ease .4s;
+}
+/* button pr hover */
+#navpart2 h4::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease .4s;
+}
+#navpart2 h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+#navpart2 h4 a{
+    text-decoration: none;
+    color: #111;
+    z-index: 9;
+    position: relative;
+}
+#navpart2 h4:hover a{
+    color: #fff;
+}
+#center{
+    height: 65vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    /* background-color: aqua; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.723);
+    padding-bottom: 2.5vw;
+}
+#left p{
+    width: 30vw;
+    font-size: 1.8vw;
+    line-height: 2vw;
+}
+#center h1{
+    font-size: 10vw;
+    line-height: 8vw;
+    text-align: right;
+}
+#page1 video{
+    position: relative;
+    width: 100%;
+    margin-top: 4vw;
+    border-radius: 30px;
+}
+#heroshape{
+    position: absolute;
+    height: 36vw;
+    width: 46vw;
+    right: 0;
+    top: 68vh;
+}
+#hero1{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: #FE3509; 
+    filter: blur(10px);
+    
+}
+#hero2{
+    height: 30vw;
+    width: 30vw;
+   border-radius: 50%;
+   background :linear-gradient(#FE3509, #fe4a09);
+    filter: blur(30px);
+    position: absolute;
+    animation-name: anime2;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#hero3{
+    height:30vw;
+    width: 30vw;
+    position: absolute;
+    border-radius: 50%;
+    background :linear-gradient(#FE3509, #fe4a09); 
+    filter: blur(30px); 
+    animation-name: anime1;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes anime1 {
+    from{
+        transform: translate(55%,-3%);
+    }
+    to{
+        transform: translate(0%, 10%);
+    }
+}
+@keyframes anime2 {
+    from{
+        transform: translate(5%,-5%);
+    }
+    to{
+        transform: translate(-20%, 30%);
+    }
+}
+#page2{
+    min-height: 100vh;
+    width: 100%; 
+    padding: 6vw 0;
+    background-color: #EEEAE1;
+    position: relative;
+}
+#movingtext{
+    white-space: nowrap;
+    overflow-x: auto;
+}
+#movingtext::-webkit-scrollbar{
+    display: none;
+}
+.con{
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: move;
+    animation-duration: 14s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#movingtext h1{
+    font-size: 9vw;
+    display: inline-block;
+}
+#gola{
+    height: 50px;
+    width: 50px;
+    border-radius:50% ;
+    background-color: #FE3509;
+    display: inline-block;
+    margin: 1vw 2vw;
+}
+@keyframes move {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+    
+}
+#page2bottom{
+    height: 80vh;
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4vw;
+    /* ya do line taki circle text ka nicha aajaya */
+    position: relative;
+    z-index: 9;
+}
+#page2bottom h1{
+    font-size: 4vw;
+    width: 50%;
+    line-height: 4vw;
+}
+#bottom2{
+    width: 30%;
+}
+#bottom2 img{
+    width: 100%;
+    border-radius: 10px;
+}
+#bottom2 p{
+    font-weight: 100;
+    margin-top: 3vw;
+    font-size: 1vw;
+}
+#page2 #gooe{
+    height: 30vw;
+    width: 30vw;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(to top right,#FE3509,#fe7f09);
+    top: 55%;
+    left: 20%;
+    filter: blur(20px);
+    animation-name: gooe;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes gooe {
+    from{
+        filter: blur(20px);
+        transform: translate(10%,-10%) skew(0deg);
+    }
+    to{
+        filter: blur(30px);
+        transform: translate(-10%,10%) skew(-12deg);
+    }
+}
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color:#EEEAE1 ;
+    padding: 4vw 0;
+}
+.elem{
+    height: 90px;
+    border-top: 1px solid rgba(0, 0, 0, 0.314);
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.314);
+    position: relative;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+    overflow: hidden;
+}
+.elem h2{
+    font-size: 3vw;
+    z-index: 9;
+}
+ 
+.elem #overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #FF9831;
+    left: 0;
+    top: -100%; 
+    transition: all ease .3s;
+}
+ 
+.elem:hover #overlay{
+    top: 0;  
+} 
+#button{    
+    margin: 3vw 2vw;
+    margin-top: 5vw;
+    display: inline-block;
+    width: auto;
+    padding: 0; 
+
+    position: relative;
+}
+#button h4{   
+    width: max-content;
+    border: 1px solid black;
+    border-radius: 50px; 
+    padding: 1vw 1vw;
+    position: relative;
+    overflow: hidden;  
+    z-index: 1;
+}
+#button h4::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+    background-color: #111;
+    
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease .4s;
+    z-index: -1;
+}
+#button h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+#button a{
+    color: black;
+    text-decoration: none;
+}
+#button h4:hover a{
+    color: #EEEAE1;
+    }
+
+#page4{
+    min-height: 60vh;
+    width: 100%;
+    background-color: #EEEAE1;
+
+} 
+#fixed-image{
+    height: 30vw;
+    border-radius: 10px;
+    width: 20vw; 
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    display: none;
+    top: 25%;
+    background-size: cover;
+    background-position: center;
+}
+#page5{
+    height: 100vh;
+    width: 100%;  
+}
+#footer{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 9; 
+    background: linear-gradient(#111, #FE3509);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    bottom: 0;
+    color: #ffffffab;
+    flex-direction: column;
+    /* z-index: 99; */
+}
+#footer h1{ 
+    position: absolute;
+    font-size: 17vw;
+    text-transform: uppercase; 
+    top: 40%;
+}
+#footer-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 20%;
+    height: 20vh;
+    width: 100%; 
+    color: #EEEAE1;
+}
+#footer-div #rigit{
+    padding: 0 2vw;
+}
+#footer-div #rigit h4{
+    height: 2vw;
+    font-weight: 600;
+}
+#footer-div #lefte{
+    width: 25%; 
+}
+#lefte p{
+    font-size: 1.5vw;
+}
+#end{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #EEEAE1;
+    height: 10vh;
+    color: #EEEAE1;
+    width: 100%;
+    padding: 0 2vw;
+}
+#loader{
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    transition: all ease .8s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#loader h4{
+    font-size: 3vw;
+    position: absolute;
+    opacity: 0;
+    color: #fff;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+
+}
+#loader h4:nth-child(2){
+    animation-delay: 2s;
+}
+#loader h4:nth-child(3){
+    animation-delay: 3s;
+}
+@keyframes load {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
